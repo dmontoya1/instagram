@@ -1,11 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { RutasNoAutenticadas } from './components/NoAutenticados/RutasNoAutenticadas';
 
 export default class App extends React.Component {
+  constructor() {
+    super();
+    this.setState = { name: 'instagram-clone' };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <RutasNoAutenticadas />
+        <Text>TESTTT</Text>
       </View>
     );
   }
@@ -14,8 +21,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: '#999',
+
   },
 });
