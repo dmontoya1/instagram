@@ -9,7 +9,7 @@ const SignIn = (props) => {
   console.log(props);
   const { navigation } = props;
   return (
-    <View>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
       <Text>Componente SignIn</Text>
       <Button
         title="Navegar a SignUp"
@@ -21,7 +21,7 @@ const SignIn = (props) => {
 const SignUp = (props) => {
   const { navigation } = props;
   return (
-    <View>
+    <View style={{ flex: 1, justifyContent: 'center' }}>
       <Text>Componente SignUp</Text>
       <Button
         title="Regresar"
@@ -38,7 +38,11 @@ const RutasNoAutenticadas = createStackNavigator({
   },
   SignUp: {
     screen: SignUp,
+
   },
+}, {
+  headerMode: 'none',
+
 });
 
 export { RutasNoAutenticadas };
