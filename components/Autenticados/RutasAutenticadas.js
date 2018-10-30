@@ -26,12 +26,12 @@ const RutasAutenticadas = createBottomTabNavigator({
 {
   tabBarPosition: 'bottom',
   tabBarOptions: {
-    activeTintColor: '#fff',
+    activeTintColor: '#000',
     labelStyle: {
       fontSize: 13,
     },
     style: {
-      backgroundColor: 'gray',
+      backgroundColor: 'white',
     },
   },
 });
