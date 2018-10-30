@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View, Text, StyleSheet, Button,
+} from 'react-native';
 
 export default class Follow extends Component {
   constructor(props) {
@@ -9,9 +11,14 @@ export default class Follow extends Component {
   }
 
   render() {
+    const { navigation } = this.props;
     return (
       <View style={styles.container}>
         <Text> Follow </Text>
+        <Button
+          title="Autor"
+          onPress={() => { navigation.navigate('Autor'); }}
+        />
       </View>
     );
   }

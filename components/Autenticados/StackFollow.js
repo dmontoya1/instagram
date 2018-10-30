@@ -1,27 +1,25 @@
 import { createStackNavigator } from 'react-navigation';
-import Search from './Search';
-import Publicacion from './Publicacion';
+import { TabFollow } from './TabFollow';
 import Autor from './Profile';
+import Publicacion from './Publicacion';
 import Comentarios from './Comentarios';
 
-
-const StackSearch = createStackNavigator({
-  Search: {
-    screen: Search,
-  },
-  Publicacion: {
-    screen: Publicacion,
+const StackFollow = createStackNavigator({
+  TabFollow: {
+    screen: TabFollow,
   },
   Autor: {
     screen: Autor,
   },
+  Publicacion: {
+    screen: Publicacion,
+  },
   Comentarios: {
     screen: Comentarios,
   },
-
 });
 
-StackSearch.navigationOptions = ({ navigation }) => {
+StackFollow.navigationOptions = ({ navigation }) => {
   const { routeName } = navigation.state.routes[navigation.state.index];
 
   const navigationOptions = {};
@@ -30,5 +28,4 @@ StackSearch.navigationOptions = ({ navigation }) => {
   if (routeName === 'Comentarios') { navigationOptions.tabBarVisible = false; }
   return navigationOptions;
 };
-
-export { StackSearch };
+export { StackFollow };
