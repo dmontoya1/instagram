@@ -17,8 +17,21 @@ const StackHome = createStackNavigator({
   },
   Comentarios: {
     screen: Comentarios,
+    navigationOptions: ({ navigation }) => ({
+      tabBarVisible: false,
+    }),
   },
 
 });
+
+StackHome.navigationOptions = ({ navigation }) => {
+  const { routeName } = navigation.state.routes[navigation.state.index];
+
+  const navigationOptions = {};
+
+
+  if (routeName === 'Comentarios') { navigationOptions.tabBarVisible = false; }
+  return navigationOptions;
+};
 
 export { StackHome };
