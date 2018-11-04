@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {
   View, Text, StyleSheet, Button,
 } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class SignIn extends Component {
+class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,13 +12,18 @@ export default class SignIn extends Component {
   }
 
   render() {
+    console.log(this.props.number);
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text> SignIn </Text>
+        <Text> SignUp </Text>
+        <Button
+          title="Aumentar"
+          onPress={this.props.add}
+        />
         <Button
           title="SignIn"
-          onPress={() => { navigation.navigate('SignIn'); }}
+          onPress={() => { navigation.goBack(); }}
         />
       </View>
     );
@@ -32,3 +38,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#2c3e50',
   },
 });
+
+const mapStateToProps = state => ({
+  number: state.reducerTest,
+});
+
+const mapDispatchToProps = dispatch => ({
+  add: () => {
+    dispatch({ type: 'ADD_REDUCER_TEST' });
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);

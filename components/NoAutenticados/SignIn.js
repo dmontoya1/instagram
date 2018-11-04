@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, Button,
 } from 'react-native';
 
-export default class SignUp extends Component {
+export default class SignIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,7 @@ export default class SignUp extends Component {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text> SignUp </Text>
+        <Text> SignIn </Text>
         <Button
           title="SignUp"
           onPress={() => { navigation.navigate('SignUp'); }}
