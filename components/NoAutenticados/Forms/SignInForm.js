@@ -8,7 +8,7 @@ const fieldName = (props) => {
   console.log(props);
   const { ph, input, meta } = props;
   return (
-    <View>
+    <View style={styles.textInput}>
       <TextInput
         placeholder={ph}
         onChangeText={input.onChange}
@@ -17,8 +17,10 @@ const fieldName = (props) => {
         autoCapitalize="none"
         secureTextEntry={!!(input.name === 'password' || input.name === 'password2')}
         onBlur={input.onBlur}
+        underlineColorAndroid="rgba(0,0,0,0)"
       />
-      {meta.touched && meta.error && <Text>{meta.error}</Text>}
+      <View style={styles.line} />
+      {meta.touched && meta.error && <Text style={styles.errors}>{meta.error}</Text>}
     </View>
   );
 };
@@ -47,8 +49,7 @@ const SignInForm = (props) => {
   return (
     <View>
       <Field name="email" component={fieldName} ph="correo@correo.com" />
-      <Field name="password" component={fieldName} ph="******" />
-      <Text>Redux Form</Text>
+      <Field name="password" component={fieldName} ph="contrasena" />
       <Button
         title="Iniciar Sesion"
         onPress={props.handleSubmit((values) => {
@@ -58,6 +59,19 @@ const SignInForm = (props) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  textInput: {
+    marginBottom: 16,
+  },
+  line: {
+    backgroundColor: '#dcdcdc',
+    height: 2,
+  },
+  errors: {
+    color: '#ff0000',
+  },
+});
 
 export default reduxForm({
   form: 'SignInForm',

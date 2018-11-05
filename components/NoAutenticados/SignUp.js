@@ -17,14 +17,9 @@ class SignUp extends Component {
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <Text> SignUp </Text>
         <SignUpForm />
-        {/* <Button
-          title="Aumentar"
-          onPress={this.props.add}
-        /> */}
         <Button
-          title="SignIn"
+          title="Iniciar Sesion"
           onPress={() => { navigation.goBack(); }}
         />
       </View>
@@ -36,8 +31,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#fff',
+    paddingHorizontal: 20,
   },
 });
 
