@@ -68,21 +68,23 @@ const SignUpForm = (props) => {
       <Field name="password2" component={fieldName} ph="confirmar contrasena" />
       <Button
         title="Registrar"
-        onPress={props.handleSubmit((values) => {
-          console.log(values);
-          auth.createUserWithEmailAndPassword(values.email, values.password)
-            .then((success) => {
-              console.log(success);
-            })
-            .catch((error) => {
-            // Handle Errors here.
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.log(errorCode);
-              console.log(errorMessage);
-            // ...
-            });
-        })}
+        onPress={props.handleSubmit(props.signup,
+          // (values) => {
+          //   console.log(values);
+          //   auth.createUserWithEmailAndPassword(values.email, values.password)
+          //     .then((success) => {
+          //       console.log(success);
+          //     })
+          //     .catch((error) => {
+          //       // Handle Errors here.
+          //       const errorCode = error.code;
+          //       const errorMessage = error.message;
+          //       console.log(errorCode);
+          //       console.log(errorMessage);
+          //       // ...
+          //     });
+          // },
+        )}
       />
     </View>
   );

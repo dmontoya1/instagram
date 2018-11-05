@@ -12,12 +12,17 @@ class SignUp extends Component {
     };
   }
 
+  userSignup = (values) => {
+    console.log(values);
+    this.props.signup(values);
+  }
+
   render() {
     console.log(this.props.number);
     const { navigation } = this.props;
     return (
       <View style={styles.container}>
-        <SignUpForm />
+        <SignUpForm signup={this.userSignup} />
         <Button
           title="Iniciar Sesion"
           onPress={() => { navigation.goBack(); }}
@@ -41,8 +46,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  add: () => {
-    dispatch({ type: 'ADD_REDUCER_TEST' });
+  signup: (values) => {
+    dispatch({ type: 'SIGNUP', data: values });
   },
 });
 
