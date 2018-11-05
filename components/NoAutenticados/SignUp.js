@@ -19,10 +19,10 @@ class SignUp extends Component {
       <View style={styles.container}>
         <Text> SignUp </Text>
         <SignUpForm />
-        <Button
+        {/* <Button
           title="Aumentar"
           onPress={this.props.add}
-        />
+        /> */}
         <Button
           title="SignIn"
           onPress={() => { navigation.goBack(); }}
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2c3e50',
+    backgroundColor: '#fff',
   },
 });
 
